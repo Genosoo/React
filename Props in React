@@ -1,0 +1,49 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// CSS
+import "./index.css";
+
+
+
+//setup vars
+const firstBook = {
+    image:'https://images-na.ssl-images-amazon.com/images/I/911cmGSgcvL._AC_UL254_SR254,254_.jpg',
+    title: 'Will',
+    author: 'Will Smith'
+
+}
+
+
+const secondBook = {
+  image:'https://images-na.ssl-images-amazon.com/images/I/81kYj5Uyu8L._AC_UL200_SR200,200_.jpg',
+  title: 'The Song of Achilles: A Novel',
+  author: 'Ali Hazelwood'
+
+}
+
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book  image={firstBook.image} title={firstBook.title} author={firstBook.author}/>
+      <Book  image={secondBook.image} title={secondBook.title} author={secondBook.author}/>
+    </section>
+  );
+}
+
+
+const Book = (props) => {
+  // console.log(props);
+  return (
+    <article className='book'>
+      <img src={props.image} alt="" />
+      <h1>{props.title}</h1>
+      <h4>{props.author}</h4>
+    </article>
+  );
+}
+
+
+
+ReactDOM.render(<BookList />, document.getElementById('root'));
+
